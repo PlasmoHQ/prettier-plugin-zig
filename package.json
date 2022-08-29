@@ -1,0 +1,42 @@
+{
+  "name": "prettier-plugin-zig",
+  "private": false,
+  "version": "0.0.0",
+  "description": "A prettier plugins for the zig programming language",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "url": "https://github.com/PlasmoHQ/prettier-plugin-zig",
+    "type": "git"
+  },
+  "author": "Plasmo Corp. <support@plasmo.com>",
+  "homepage": "https://github.com/PlasmoHQ/prettier-plugin-zig#README",
+  "scripts": {
+    "build": "run-p build:*",
+    "build:plugin": "tsup src/index.ts --minify",
+    "build:parser": "zig build --cache-dir .cache -p dist",
+    "prepublishOnly": "pnpm build"
+  },
+  "keywords": [
+    "prettier",
+    "plugin",
+    "sort",
+    "import",
+    "typescript",
+    "javascript"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@plasmohq/prettier-plugin-sort-imports": "workspace:*",
+    "@plasmohq/rps": "workspace:*",
+    "@types/prettier": "2.7.0",
+    "prettier": "2.7.1",
+    "tsup": "6.2.2",
+    "typescript": "4.7.4"
+  },
+  "peerDependencies": {
+    "prettier": "2.x"
+  }
+}
